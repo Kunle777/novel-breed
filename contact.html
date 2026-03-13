@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Novel Breed Agric Limited — call, email, or visit our offices in Magboro, Ogun State and Ibadan, Oyo State." />
+  <title>Contact Us — Novel Breed Agric Ltd</title>
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Raleway:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ══ PAGE HERO ══ */
+    .page-hero {
+      position: relative;
+      height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/contact-hero.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.7);
+    }
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(18,72,32,0.85) 0%, rgba(27,107,47,0.75) 100%);
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 24px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .page-hero-content .breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 16px;
+    }
+    .page-hero-content .breadcrumb a { color: rgba(255,255,255,0.7); transition: color 0.3s; }
+    .page-hero-content .breadcrumb a:hover { color: var(--gold); }
+    .page-hero-content .breadcrumb span { color: var(--gold); }
+    .page-hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .page-hero-content p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.85);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ══ QUICK CONTACT STRIP ══ */
+    .quick-contact {
+      background: var(--green);
+    }
+    .quick-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .quick-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 32px 36px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+      transition: background 0.25s ease;
+    }
+    .quick-item:last-child { border-right: none; }
+    .quick-item:hover { background: rgba(255,255,255,0.07); }
+    .quick-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .quick-icon svg { width: 22px; height: 22px; color: var(--gold); }
+    .quick-text strong {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .quick-text span {
+      font-size: 14px;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    /* ══ MAIN CONTACT SECTION ══ */
+    .contact-main {
+      background: var(--off-white);
+      padding: 88px 0;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    /* ── Left: info ── */
+    .contact-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 2.8vw, 36px);
+      font-weight: 700;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .contact-info > p {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .contact-block {
+      margin-bottom: 36px;
+    }
+    .contact-block-label {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .contact-block-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--light-gray);
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .contact-detail:last-child { margin-bottom: 0; }
+    .contact-detail-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .contact-detail-icon svg { width: 16px; height: 16px; color: var(--green); }
+    .contact-detail-text {}
+    .contact-detail-text strong {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+    .contact-detail-text span,
+    .contact-detail-text a {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.55;
+    }
+    .contact-detail-text a:hover { color: var(--green); }
+
+    /* WhatsApp CTA */
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: var(--white);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 14px 28px;
+      border-radius: 4px;
+      margin-top: 8px;
+      transition: background 0.25s ease, gap 0.25s ease;
+    }
+    .whatsapp-btn:hover { background: #1ebe5d; gap: 14px; }
+    .whatsapp-btn svg { width: 18px; height: 18px; }
+
+    /* ── Right: form ── */
+    .contact-form-wrap {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 48px 44px;
+      box-shadow: var(--shadow);
+    }
+    .contact-form-wrap h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+    .contact-form-wrap > p {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: var(--dark);
+      margin-bottom: 7px;
+    }
+    .form-group label span { color: var(--green); margin-left: 2px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--light-gray);
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--dark);
+      background: var(--off-white);
+      transition: border-color 0.25s ease, background 0.25s ease;
+      outline: none;
+      box-sizing: border-box;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+      background: var(--white);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+      line-height: 1.6;
+    }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 16px;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background 0.25s ease, gap 0.25s ease;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--green-dark, #155224); gap: 14px; }
+    .form-submit svg { width: 16px; height: 16px; }
+
+    /* success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px 0;
+    }
+    .form-success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--green-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .form-success-icon svg { width: 30px; height: 30px; color: var(--green); }
+    .form-success h4 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .form-success p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+    .form-note {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 14px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ══ MAP SECTION ══ */
+    .map-section {
+      background: var(--white);
+      padding: 88px 0;
+    }
+    .map-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 56px;
+    }
+    .map-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .map-card-header {
+      background: var(--green);
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .map-card-header svg { width: 20px; height: 20px; color: var(--gold); flex-shrink: 0; }
+    .map-card-header div {}
+    .map-card-header strong {
+      display: block;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--white);
+      margin-bottom: 2px;
+    }
+    .map-card-header span {
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+    }
+    .map-embed {
+      width: 100%;
+      height: 300px;
+      border: none;
+      display: block;
+    }
+    .map-card-footer {
+      padding: 16px 24px;
+      background: var(--off-white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .map-card-footer p {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.4;
+    }
+    .directions-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      color: var(--green);
+      white-space: nowrap;
+      transition: gap 0.25s ease;
+    }
+    .directions-link:hover { gap: 9px; }
+    .directions-link svg { width: 13px; height: 13px; }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 1024px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-form-wrap { padding: 36px 32px; }
+    }
+    @media (max-width: 768px) {
+      .page-hero { height: 320px; }
+      .page-hero-content { padding: 0 20px; }
+      .page-hero-content h1 { font-size: 32px; }
+      .page-hero-content p { font-size: 15px; }
+      .page-hero-content .breadcrumb { font-size: 11px; }
+      
+      .quick-contact-grid { grid-template-columns: 1fr; }
+      .quick-item { 
+        border-right: none; 
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 24px 28px;
+      }
+      .quick-item:last-child { border-bottom: none; }
+      .quick-icon { width: 44px; height: 44px; }
+      .quick-icon svg { width: 20px; height: 20px; }
+      .quick-text strong { font-size: 10px; }
+      .quick-text span { font-size: 13px; }
+      
+      .contact-main { padding: 60px 0; }
+      .contact-info h2 { font-size: 24px; }
+      .contact-info > p { font-size: 14px; }
+      .contact-block { margin-bottom: 28px; }
+      .contact-block-label { font-size: 9px; }
+      .contact-detail-icon { width: 32px; height: 32px; }
+      .contact-detail-icon svg { width: 14px; height: 14px; }
+      .contact-detail-text strong { font-size: 12px; }
+      .contact-detail-text span,
+      .contact-detail-text a { font-size: 13px; }
+      .whatsapp-btn { 
+        font-size: 13px; 
+        padding: 12px 24px;
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .contact-form-wrap { padding: 32px 24px; }
+      .contact-form-wrap h3 { font-size: 22px; }
+      .contact-form-wrap > p { font-size: 13px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .form-group { margin-bottom: 16px; }
+      .form-group label { font-size: 11px; }
+      .form-group input,
+      .form-group select,
+      .form-group textarea { 
+        padding: 11px 14px; 
+        font-size: 13px;
+      }
+      .form-submit { 
+        padding: 14px; 
+        font-size: 13px;
+      }
+      
+      .map-section { padding: 60px 0; }
+      .section-header h2 { font-size: 28px; }
+      .section-header p { font-size: 15px; }
+      .map-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 40px; }
+      .map-card-header { padding: 16px 20px; }
+      .map-card-header svg { width: 18px; height: 18px; }
+      .map-card-header strong { font-size: 12px; }
+      .map-card-header span { font-size: 11px; }
+      .map-embed { height: 260px; }
+      .map-card-footer { padding: 14px 20px; }
+      .map-card-footer p { font-size: 12px; }
+      .directions-link { font-size: 11px; }
+    }
+    @media (max-width: 480px) {
+      .page-hero { height: 280px; }
+      .page-hero-content h1 { font-size: 28px; }
+      .page-hero-content p { font-size: 14px; }
+      .contact-form-wrap { padding: 28px 20px; }
+      .contact-info { padding: 0 4px; }
+      .quick-item { padding: 20px 20px; }
+      .map-embed { height: 240px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══ TOPBAR ══ -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-contact">
+        <a href="tel:08026869800">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:5px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          080 2686 9800
+        </a>
+        <a href="mailto:novelbreedagricltd@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:5px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          novelbreedagricltd@gmail.com
+        </a>
+      </div>
+      <div class="topbar-socials">
+        <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#fff" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <img src="images/logo.svg" alt="Novel Breed Agric Ltd" height="52" />
+        </a>
+        <ul class="nav-links">
+          <li class="has-dropdown">
+            <a href="#">Company ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="about.html#history">Our History</a></li>
+              <li><a href="team.html">Our Team</a></li>
+              <li><a href="governance.html">Corporate Governance</a></li>
+            </ul>
+          </li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="governance.html">Governance</a></li>
+          <!-- NEWS LINK: add <li><a href="news.html">News</a></li> here when ready -->
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html" class="nav-cta">Get In Touch</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ══ PAGE HERO ══ -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Contact</span>
+      </div>
+      <h1>Get In Touch</h1>
+    </div>
+  </section>
+
+
+  <!-- ══ QUICK CONTACT STRIP ══ -->
+  <div class="quick-contact">
+    <div class="container" style="padding:0;">
+      <div class="quick-contact-grid">
+
+        <a href="tel:08026869800" class="quick-item">
+          <div class="quick-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          </div>
+          <div class="quick-text">
+            <strong>Call Us</strong>
+            <span>080 2686 9800<br>070 5742 3472</span>
+          </div>
+        </a>
+
+        <a href="mailto:novelbreedagricltd@gmail.com" class="quick-item">
+          <div class="quick-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="quick-text">
+            <strong>Email Us</strong>
+            <span>novelbreedagricltd@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="https://wa.me/2348026869800" target="_blank" rel="noopener" class="quick-item">
+          <div class="quick-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 24 24" style="color:var(--gold)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="quick-text">
+            <strong>WhatsApp</strong>
+            <span>Message us directly<br>for fast responses</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══ MAIN CONTACT SECTION ══ -->
+  <section class="contact-main">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- ── Left: Contact Info ── -->
+        <div class="contact-info reveal">
+          <span class="section-label" style="display:block;margin-bottom:12px;">Reach Us</span>
+          <h2>We're Ready to Hear From You</h2>
+          <p>Whether you're a farmer placing your first order, a distributor exploring a partnership, or an investor doing due diligence — our team responds to all enquiries promptly.</p>
+
+          <!-- Head Office -->
+          <div class="contact-block">
+            <div class="contact-block-label">Head Office</div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <strong>Registered Address</strong>
+                <span>7 Omotosho Street, Bankole Estate,<br>Magboro, Ogun State, Nigeria</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Factory -->
+          <div class="contact-block">
+            <div class="contact-block-label">Production Facility</div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <strong>Ibadan Factory</strong>
+                <span>Km 6, Old Lagos Road, Podo,<br>New Garage, Ibadan, Oyo State, Nigeria</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone & Email -->
+          <div class="contact-block">
+            <div class="contact-block-label">Phone &amp; Email</div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <strong>Phone</strong>
+                <a href="tel:08026869800">080 2686 9800</a><br>
+                <a href="tel:07057423472">070 5742 3472</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <strong>Email</strong>
+                <a href="mailto:novelbreedagricltd@gmail.com">novelbreedagricltd@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/2348026869800" target="_blank" rel="noopener" class="whatsapp-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Message Us on WhatsApp
+          </a>
+        </div>
+
+        <!-- ── Right: Enquiry Form ── -->
+        <div class="contact-form-wrap reveal reveal-delay-1">
+          <h3>Send an Enquiry</h3>
+          <p>Fill in the form below and a member of our team will get back to you within one business day.</p>
+
+          <form id="contact-form" action="https://formspree.io/f/mojkverq" method="post">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name <span>*</span></label>
+                <input type="text" name="name" placeholder="e.g. Emeka Okonkwo" required />
+              </div>
+              <div class="form-group">
+                <label>Phone Number <span>*</span></label>
+                <input type="tel" name="phone" placeholder="e.g. 080 0000 0000" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="your@email.com" />
+            </div>
+
+            <div class="form-group">
+              <label>Enquiry Type <span>*</span></label>
+              <select name="enquiry_type" required>
+                <option value="" disabled selected>Select an enquiry type</option>
+                <option value="product_order">Product Order / Pricing</option>
+                <option value="bulk_order">Bulk / Distributor Order</option>
+                <option value="technical">Technical / Nutritional Advisory</option>
+                <option value="partnership">Business Partnership</option>
+                <option value="investor">Investor / Lender Enquiry</option>
+                <option value="factory_visit">Factory Visit</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Farm / Company Name</label>
+              <input type="text" name="farm_name" placeholder="Optional — your farm or business name" />
+            </div>
+
+            <div class="form-group">
+              <label>Message <span>*</span></label>
+              <textarea name="message" placeholder="Tell us about your needs — feed type, quantities, location, or any questions you have..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">
+              Send Enquiry
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+
+            <p class="form-note">
+              <!-- NOTE TO DEVELOPER: This form currently shows a success message on submit
+                   but does NOT actually send emails. To make it functional, integrate one of:
+                   - Formspree (https://formspree.io) — free tier, just change the form action
+                   - EmailJS (https://emailjs.com) — free tier, JS-based, no backend needed
+                   Both work with static HTML sites. See README or ask your developer.
+              -->
+              We respond to all enquiries within one business day.
+            </p>
+
+          </form>
+
+          <!-- Success state (shown after submit) -->
+          <div class="form-success" id="form-success">
+            <div class="form-success-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h4>Enquiry Received</h4>
+            <p>Thank you for reaching out. A member of our team will get back to you within one business day.<br><br>For urgent matters, please call us directly on <a href="tel:08026869800" style="color:var(--green);font-weight:700;">080 2686 9800</a>.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ MAPS ══ -->
+  <section class="map-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Find Us</span>
+        <h2>Our Locations</h2>
+        <p>Two locations serving customers across Nigeria — head office in Ogun State, production facility in Oyo State.</p>
+      </div>
+
+      <div class="map-grid">
+
+        <!-- Head Office -->
+        <div class="map-card reveal">
+          <div class="map-card-header">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            <div>
+              <strong>Head Office — Magboro, Ogun State</strong>
+              <span>7 Omotosho Street, Bankole Estate</span>
+            </div>
+          </div>
+          <iframe
+            class="map-embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.0!2d3.366!3d6.893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwNTMnMzUuNiJOIDPCsDIxJzU3LjYiRQ!5e0!3m2!1sen!2sng!4v1234567890"
+            title="Novel Breed Agric Head Office — Magboro, Ogun State">
+          </iframe>
+          <!-- NOTE: Replace the src above with the correct Google Maps embed URL for
+               "7 Omotosho Street, Bankole Estate, Magboro, Ogun State".
+               Go to Google Maps → search the address → Share → Embed a map → copy the src URL. -->
+          <div class="map-card-footer">
+            <p>7 Omotosho Street, Bankole Estate,<br>Magboro, Ogun State</p>
+            <a href="https://maps.google.com/?q=Magboro,Ogun+State,Nigeria" target="_blank" rel="noopener" class="directions-link">
+              Get Directions
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Factory -->
+        <div class="map-card reveal reveal-delay-1">
+          <div class="map-card-header">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+            <div>
+              <strong>Ibadan Factory — Oyo State</strong>
+              <span>Km 6, Old Lagos Road, Podo, New Garage</span>
+            </div>
+          </div>
+          <iframe
+            class="map-embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.0!2d3.856!3d7.388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjMnMTYuOCJOIDPCsDUxJzIxLjYiRQ!5e0!3m2!1sen!2sng!4v1234567891"
+            title="Novel Breed Agric Factory — Ibadan, Oyo State">
+          </iframe>
+          <!-- NOTE: Replace the src above with the correct Google Maps embed URL for
+               "Km 6 Old Lagos Road, Podo, New Garage, Ibadan, Oyo State".
+               Go to Google Maps → search the address → Share → Embed a map → copy the src URL. -->
+          <div class="map-card-footer">
+            <p>Km 6, Old Lagos Rd, Podo, New Garage,<br>Ibadan, Oyo State</p>
+            <a href="https://maps.google.com/?q=New+Garage+Ibadan,Oyo+State,Nigeria" target="_blank" rel="noopener" class="directions-link">
+              Get Directions
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="nav-logo-text" style="margin-bottom:14px;">
+              <span class="brand-name" style="font-size:18px;">Novel Breed Agric Ltd</span>
+              <span class="brand-sub">RC 1994829</span>
+            </div>
+            <p class="footer-tagline">Producing premium quality animal feeds that empower Nigerian farmers and support the nation's food security — one bag at a time.</p>
+            <div class="footer-socials">
+              <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+              <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+              <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#124820" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+              <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="about.html#history">Our History</a></li>
+              <li><a href="team.html">Our Team</a></li>
+              <li><a href="governance.html">Corporate Governance</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Products</h5>
+            <ul>
+              <li><a href="products.html">Poultry Feed</a></li>
+              <li><a href="products.html">Livestock Feed</a></li>
+              <li><a href="contact.html">Request a Quote</a></li>
+              <li><a href="contact.html">Technical Advisory</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Contact</h5>
+            <ul class="footer-contact">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                7 Omotosho Street, Bankole Estate, Magboro, Ogun State
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                080 2686 9800 · 070 5742 3472
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                novelbreedagricltd@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:20px 24px;">
+        <p style="font-size:13px;color:rgba(255,255,255,0.45);">&copy; 2025 Novel Breed Agric Limited. All Rights Reserved. RC: 1994829</p>
+        <p style="font-size:13px;color:rgba(255,255,255,0.45);">Registered under <a href="governance.html" style="color:var(--gold);">CAMA 2020</a>, Nigeria</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Formspree form submission with success message
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+    
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const submitBtn = this.querySelector('.form-submit');
+      const originalText = submitBtn.innerHTML;
+      
+      // Show loading state
+      submitBtn.innerHTML = 'Sending...';
+      submitBtn.disabled = true;
+      
+      try {
+        const response = await fetch(this.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          // Success - show success message
+          this.style.display = 'none';
+          formSuccess.style.display = 'block';
+        } else {
+          // Error from Formspree
+          alert('There was a problem submitting your form. Please try again or call us directly.');
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }
+      } catch (error) {
+        // Network error
+        alert('Network error. Please check your connection and try again.');
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>

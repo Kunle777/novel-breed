@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" width="340" height="80">
+  <defs>
+    <style>
+      .logo-icon { fill: none; stroke: #1B6B2F; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .logo-leaf  { fill: #1B6B2F; }
+      .brand-main { font-family: 'Raleway', 'Trebuchet MS', sans-serif; font-weight: 800; font-size: 18px; fill: #1B6B2F; letter-spacing: 0.5px; }
+      .brand-sub  { font-family: 'DM Sans', 'Segoe UI', sans-serif; font-weight: 400; font-size: 9.5px; fill: #5a8a68; letter-spacing: 2.5px; }
+      .brand-tag  { font-family: 'DM Sans', 'Segoe UI', sans-serif; font-weight: 400; font-size: 8px; fill: #888; letter-spacing: 1px; }
+    </style>
+  </defs>
+
+  <!-- ── ICON: circle ── -->
+  <circle cx="40" cy="40" r="30" fill="none" stroke="#1B6B2F" stroke-width="2"/>
+
+  <!-- ── ICON: ground lines (3 arched lines at bottom of circle) ── -->
+  <path d="M18 54 Q40 48 62 54" fill="none" stroke="#1B6B2F" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M22 59 Q40 54 58 59" fill="none" stroke="#1B6B2F" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M27 64 Q40 60 53 64" fill="none" stroke="#1B6B2F" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- ── ICON: wheat stalk (main stem) ── -->
+  <line x1="34" y1="62" x2="34" y2="18" stroke="#1B6B2F" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- ── ICON: wheat grains on stalk (left side, alternating) ── -->
+  <!-- grain 1 left -->
+  <ellipse cx="29" cy="50" rx="5" ry="3" fill="#1B6B2F" transform="rotate(-35 29 50)"/>
+  <!-- grain 2 left -->
+  <ellipse cx="27" cy="42" rx="5" ry="3" fill="#1B6B2F" transform="rotate(-40 27 42)"/>
+  <!-- grain 3 left -->
+  <ellipse cx="26" cy="34" rx="5" ry="2.8" fill="#1B6B2F" transform="rotate(-42 26 34)"/>
+  <!-- grain 4 left -->
+  <ellipse cx="26" cy="27" rx="4.5" ry="2.5" fill="#1B6B2F" transform="rotate(-40 26 27)"/>
+  <!-- grain 5 left top -->
+  <ellipse cx="28" cy="21" rx="4" ry="2.2" fill="#1B6B2F" transform="rotate(-35 28 21)"/>
+
+  <!-- grain 1 right -->
+  <ellipse cx="39" cy="47" rx="5" ry="3" fill="#1B6B2F" transform="rotate(35 39 47)"/>
+  <!-- grain 2 right -->
+  <ellipse cx="41" cy="39" rx="5" ry="3" fill="#1B6B2F" transform="rotate(40 41 39)"/>
+  <!-- grain 3 right -->
+  <ellipse cx="41" cy="31" rx="5" ry="2.8" fill="#1B6B2F" transform="rotate(42 41 31)"/>
+  <!-- grain 4 right -->
+  <ellipse cx="40" cy="24" rx="4.5" ry="2.5" fill="#1B6B2F" transform="rotate(38 40 24)"/>
+
+  <!-- tip grain at top -->
+  <ellipse cx="34" cy="16" rx="3.5" ry="5" fill="#1B6B2F" transform="rotate(0 34 16)"/>
+
+  <!-- ── DIVIDER line ── -->
+  <line x1="84" y1="16" x2="84" y2="64" stroke="#d0e8d4" stroke-width="1.5"/>
+
+  <!-- ── TEXT: Company Name ── -->
+  <text x="96" y="34" class="brand-main">NOVEL BREED</text>
+  <text x="96" y="50" class="brand-sub">AGRIC LIMITED</text>
+  <text x="97" y="63" class="brand-tag">RC: 1994829</text>
+
+</svg>
