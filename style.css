@@ -1302,11 +1302,10 @@ section { padding: 90px 0; }
   }
   .nav-logo img { height: 40px; }
   
-  /* Home page only - hamburger on left */
-  .home-page .nav-inner {
+  /* Hamburger on left for ALL pages */
+  .nav-inner {
     flex-direction: row-reverse;
   }
-  .home-page .hamburger { margin-left: auto; }
   
   .nav-links {
     display: none;
