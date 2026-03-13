@@ -31,6 +31,7 @@
   <!-- Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="images/hero.jpg" as="image" />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Raleway:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" as="style" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Raleway:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 
@@ -366,7 +367,7 @@
         <div class="team-card reveal">
           <!-- REPLACE: images/team-1.jpg with Adewale's headshot -->
           <div class="team-card-img">
-            <img src="images/adewale.jpg" alt="Adewale Adekunle Adeniyi" loading="lazy" />
+            <img src="images/adewale.jpg" alt="Adewale Adekunle Adeniyi" loading="eager" fetchpriority="high" />
           </div>
           <div class="team-card-body">
             <h4>Adewale Adekunle Adeniyi</h4>
@@ -378,7 +379,7 @@
         <div class="team-card reveal reveal-delay-1">
           <!-- REPLACE: images/team-2.jpg with Adenola's headshot -->
           <div class="team-card-img">
-            <img src="images/team-2.jpg" alt="Adenola Adeniyi Samuel" loading="lazy" />
+            <img src="images/team-2.jpg" alt="Adenola Adeniyi Samuel" loading="eager" fetchpriority="high" />
           </div>
           <div class="team-card-body">
             <h4>Adenola Adeniyi Samuel</h4>
@@ -390,7 +391,7 @@
         <div class="team-card reveal reveal-delay-2">
           <!-- REPLACE: images/team-3.jpg with Olusola's headshot -->
           <div class="team-card-img">
-            <img src="images/team-3.jpg" alt="Olusola Sofade" loading="lazy" />
+            <img src="images/team-3.jpg" alt="Olusola Sofade" loading="eager" fetchpriority="high" />
           </div>
           <div class="team-card-body">
             <h4>Olusola Sofade</h4>
