@@ -143,24 +143,78 @@
       .quality-item:nth-child(3),.quality-item:nth-child(4) { border-top:1px solid rgba(255,255,255,0.1); }
       .quality-item:nth-child(4) { border-right:none; }
       .products-grid { grid-template-columns:repeat(2,1fr); }
+      .product-card[data-product="layer-mash"] { grid-column:auto !important; }
       .feeding-timeline.layer-timeline { grid-template-columns:repeat(2,1fr); }
       .modal-specs { grid-template-columns:repeat(2,1fr); }
     }
     @media (max-width:768px) {
-      .page-hero { height:300px; }
-      .products-grid { grid-template-columns:1fr 1fr; }
-      .feeding-timeline.broiler-timeline { grid-template-columns:1fr 1fr; }
+      .page-hero { height:280px; }
+      .page-hero-content { padding:0 20px 40px; }
+      .page-hero-content h1 { font-size:32px; }
+      .page-hero-content p { font-size:15px; }
+      .page-hero-content .breadcrumb { font-size:11px; }
+      
+      .quality-item { padding:20px 24px; }
+      .quality-item svg { width:24px; height:24px; }
+      .quality-item-text strong { font-size:12px; }
+      .quality-item-text span { font-size:11px; }
+      
+      .products-section { padding:60px 0; }
+      .section-header h2 { font-size:28px; }
+      .section-header p { font-size:15px; }
+      .filter-bar { margin:32px 0 40px; gap:8px; }
+      .filter-pill { font-size:11px; padding:8px 18px; }
+      
+      .products-grid { grid-template-columns:1fr; gap:20px; }
+      .product-card-top { padding:28px 24px 22px; }
+      .product-card-body { padding:20px 22px 24px; }
+      .product-card-body p { font-size:13px; }
+      .spec-chip { font-size:10px; padding:3px 10px; }
+      .card-cta-learn { font-size:11px; }
+      .card-cta-order { font-size:11px; padding:8px 16px; }
+      
+      .guide-section { padding:60px 0; }
+      .programme-label { font-size:10px; margin-bottom:20px; }
+      .feeding-timeline.broiler-timeline { grid-template-columns:1fr; gap:16px; }
+      .feeding-timeline.layer-timeline { grid-template-columns:1fr; gap:16px; }
+      .timeline-step { padding:24px 18px; }
+      .timeline-dot { width:48px; height:48px; font-size:20px; margin-bottom:12px; }
+      .timeline-step h5 { font-size:12px; }
+      .timeline-step span { font-size:11px; }
+      
+      .products-cta { padding:60px 0; }
+      .products-cta h2 { font-size:28px; }
+      .products-cta p { font-size:15px; margin-bottom:28px; }
+      .cta-buttons { flex-direction:column; align-items:stretch; }
+      .btn-white,.btn-outline-white { width:100%; justify-content:center; }
+      
       .modal-header,.modal-body { padding:24px; }
-    }
-    @media (max-width:480px) {
-      .products-grid { grid-template-columns:1fr; }
-      .quality-strip-inner { grid-template-columns:1fr; }
-      .quality-item { border-right:none; border-top:1px solid rgba(255,255,255,0.1); }
-      .quality-item:first-child { border-top:none; }
-      .feeding-timeline.broiler-timeline,.feeding-timeline.layer-timeline { grid-template-columns:1fr; }
-      .modal-specs { grid-template-columns:1fr 1fr; }
+      .modal-header h2 { font-size:24px; }
+      .modal-specs { grid-template-columns:1fr 1fr; gap:12px; }
+      .modal-spec { padding:14px 16px; }
+      .modal-spec strong { font-size:14px; }
       .modal-actions { flex-direction:column; }
       .modal-btn-primary { flex:none; }
+    }
+    @media (max-width:480px) {
+      .page-hero { height:260px; }
+      .page-hero-content h1 { font-size:28px; }
+      .page-hero-content p { font-size:14px; }
+      
+      .quality-strip-inner { grid-template-columns:1fr; }
+      .quality-item { border-right:none; border-top:1px solid rgba(255,255,255,0.1); padding:18px 20px; }
+      .quality-item:first-child { border-top:none; }
+      
+      .filter-bar { gap:6px; }
+      .filter-pill { font-size:10px; padding:7px 14px; }
+      
+      .product-card-top { padding:24px 20px 20px; }
+      .product-card-body { padding:18px 20px 22px; }
+      
+      .modal-specs { grid-template-columns:1fr; }
+      .modal-header { padding:20px; }
+      .modal-body { padding:20px; }
+      .modal-header h2 { font-size:22px; }
     }
   </style>
 </head>
@@ -171,7 +225,7 @@
     <div class="container">
       <div class="topbar-contact">
         <a href="tel:08026869800"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:5px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>080 2686 9800</a>
-        <a href="/cdn-cgi/l/email-protection#0967667f6c656b7b6c6c6d686e7b606a657d6d496e64686065276a6664"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:5px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><span class="__cf_email__" data-cfemail="88e6e7feede4eafaededece9effae1ebe4fcecc8efe5e9e1e4a6ebe7e5">[email&#160;protected]</span></a>
+        <a href="mailto:novelbreedagricltd@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:5px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>novelbreedagricltd@gmail.com</a>
       </div>
       <div class="topbar-socials">
         <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
@@ -536,7 +590,7 @@
             <ul class="footer-contact">
               <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>7 Omotosho Street, Bankole Estate, Magboro, Ogun State</li>
               <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>080 2686 9800 · 070 5742 3472</li>
-              <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd93928b98919f8f9898999c9a8f949e918999bd9a909c9491d39e9290">[email&#160;protected]</a></li>
+              <li><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>novelbreedagricltd@gmail.com</li>
             </ul>
           </div>
         </div>
@@ -802,7 +856,7 @@
     </div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="main.js"></script>
+  <script src="main.js"></script>
   <script>
     // Filter Pills
     document.querySelectorAll('.filter-pill').forEach(pill => {

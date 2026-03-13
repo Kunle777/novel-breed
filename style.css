@@ -85,7 +85,7 @@ section { padding: 90px 0; }
 
 .topbar .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -102,31 +102,6 @@ section { padding: 90px 0; }
 }
 
 .topbar-contact a:hover { color: var(--gold); }
-
-.topbar-socials {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-
-.topbar-socials a {
-  color: rgba(255,255,255,0.7);
-  font-size: 15px;
-  transition: var(--transition);
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-.topbar-socials a:hover {
-  background: var(--gold);
-  color: var(--white);
-  border-color: var(--gold);
-}
 
 /* ============================================
    NAVBAR
@@ -209,27 +184,7 @@ section { padding: 90px 0; }
   color: var(--dark);
   border-radius: var(--radius);
   transition: color 0.3s ease;
-
-  /* these 2 lines are critical for the ::before to work */
   position: relative;
-  overflow: hidden;
-}
-
-.nav-links > li > a::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--green);
-  transform: translateX(-102%);
-  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-links > li > a:hover::before,
-.nav-links > li > a.active::before {
-  transform: translateX(0);
 }
 
 .nav-links > li > a:hover,
