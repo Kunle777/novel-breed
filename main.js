@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── 8. Add social icons to sidebar bottom (mobile only) ──────────
   function addMobileSocialIcons() {
-    if (!navLinks || navLinks.querySelector('.mobile-social-icons')) return;
+    if (!navLinks) return;
     
     const socialDiv = document.createElement('div');
     socialDiv.className = 'mobile-social-icons';
@@ -178,6 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
+if (window.innerWidth <= 768) {
   addMobileSocialIcons();
+}
 
 });

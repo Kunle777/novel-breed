@@ -85,7 +85,7 @@ section { padding: 90px 0; }
 
 .topbar .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -103,20 +103,48 @@ section { padding: 90px 0; }
 
 .topbar-contact a:hover { color: var(--gold); }
 
+.topbar-socials {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.topbar-socials a {
+  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+  transition: var(--transition);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.12);
+}
+
+.topbar-socials a:hover {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+}
+
 /* ============================================
    NAVBAR
    ============================================ */
 .navbar {
-  background: var(--white);
+  background: transparent;
   padding: 0;
   position: sticky;
   top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  z-index: 9000;
+  box-shadow: none;
   transition: var(--transition);
+  backdrop-filter: blur(10px);
 }
 
 .navbar.scrolled {
+  background: var(--white);
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
 }
 
@@ -300,12 +328,14 @@ section { padding: 90px 0; }
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     105deg,
     rgba(18, 72, 32, 0.82) 0%,
     rgba(18, 72, 32, 0.55) 55%,
     rgba(0,0,0,0.2) 100%
   );
+  pointer-events: none;
 }
 
 .hero-content {

@@ -25,9 +25,10 @@
       position: absolute;
       inset: 0;
       background-image: url('images/team-hero.jpg');
-      /* REPLACE: images/team-hero.jpg — group photo or office/factory shot */
       background-size: cover;
       background-position: center top;
+      transform: scale(1.1);
+      will-change: transform;
     }
     .page-hero-overlay {
       position: absolute;
@@ -86,6 +87,29 @@
     }
 
     /* Each member gets a full-width feature card */
+    /* ══ HERO ENTRANCE ══ */
+    .page-hero-content {
+      animation: heroSlideUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes heroSlideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .page-hero-bg {
+      transition: transform 0.1s linear;
+    }
+
+    /* ══ INTRO STRIP ══ */
+    .team-intro .section-label,
+    .team-intro p {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .team-intro.visible .section-label { opacity: 1; transform: translateY(0); }
+    .team-intro.visible p { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+
+    /* ══ MEMBER CARDS ══ */
     .member-card {
       display: grid;
       grid-template-columns: 360px 1fr;
@@ -94,10 +118,21 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       margin-bottom: 48px;
-      transition: box-shadow 0.3s ease;
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                  box-shadow 0.35s ease;
+    }
+    .member-card.reverse {
+      transform: translateX(60px);
+    }
+    .member-card.in-view {
+      opacity: 1;
+      transform: translateX(0);
     }
     .member-card:hover {
-      box-shadow: 0 16px 56px rgba(0,0,0,0.12);
+      box-shadow: 0 20px 64px rgba(0,0,0,0.14);
     }
     /* alternate: image right on even cards */
     .member-card.reverse {
@@ -121,10 +156,10 @@
       height: 100%;
       object-fit: cover;
       object-position: top;
-      transition: transform 0.6s ease;
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .member-card:hover .member-img img {
-      transform: scale(1.04);
+      transform: scale(1.06);
     }
 
     /* shareholding badge over the photo */
@@ -148,6 +183,7 @@
       flex-direction: column;
       justify-content: center;
       background: var(--white);
+      transition: background 0.3s ease;
     }
 
     .member-role {
@@ -185,6 +221,19 @@
       padding: 5px 14px;
       border-radius: 30px;
       border: 1px solid rgba(27,107,47,0.15);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.4s ease, transform 0.4s ease,
+                  background 0.25s ease, color 0.25s ease;
+    }
+    .member-card.in-view .credential-tag { opacity: 1; transform: translateY(0); }
+    .member-card.in-view .credential-tag:nth-child(1) { transition-delay: 0.35s; }
+    .member-card.in-view .credential-tag:nth-child(2) { transition-delay: 0.45s; }
+    .member-card.in-view .credential-tag:nth-child(3) { transition-delay: 0.55s; }
+    .member-card.in-view .credential-tag:nth-child(4) { transition-delay: 0.65s; }
+    .credential-tag:hover {
+      background: var(--green);
+      color: var(--white);
     }
 
     .member-body p {
@@ -211,6 +260,10 @@
       color: var(--green);
       line-height: 1;
       margin-bottom: 4px;
+      transition: transform 0.3s ease;
+    }
+    .member-card:hover .member-stat-item .num {
+      transform: scale(1.08);
     }
     .member-stat-item .lbl {
       font-size: 12px;
@@ -237,11 +290,18 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      transition: var(--transition);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease,
+                  box-shadow 0.3s ease;
+    }
+    .shareholder-card.in-view {
+      opacity: 1;
+      transform: translateY(0);
     }
     .shareholder-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12);
     }
     .share-avatar {
       width: 56px;
@@ -347,7 +407,9 @@
       .member-card,
       .member-card.reverse {
         grid-template-columns: 1fr;
+        transform: translateY(40px);
       }
+      .member-card.in-view { transform: translateY(0); }
       .member-card.reverse .member-img { order: 1; }
       .member-card.reverse .member-body { order: 2; }
       .member-img { min-height: 300px; }
@@ -384,7 +446,7 @@
         <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
         <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#fff" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
       </div>
     </div>
   </div>
@@ -613,7 +675,7 @@
               <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
               <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
               <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon fill="#124820" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
-              <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+              <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
             </div>
           </div>
           <div class="footer-col">
@@ -667,7 +729,31 @@
   <script src="main.js"></script>
 
   <script>
-    // Animate ownership bars when they scroll into view
+    // ── Member cards: slide in from left/right ──
+    const memberCards = document.querySelectorAll('.member-card');
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    memberCards.forEach(card => cardObserver.observe(card));
+
+    // ── Shareholder cards: staggered fade-up ──
+    const shareCards = document.querySelectorAll('.shareholder-card');
+    const shareObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('in-view'), i * 100);
+          shareObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    shareCards.forEach(card => shareObserver.observe(card));
+
+    // ── Ownership bars ──
     const bars = document.querySelectorAll('.ownership-bar[data-width]');
     const barObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -678,6 +764,23 @@
       });
     }, { threshold: 0.3 });
     bars.forEach(bar => barObserver.observe(bar));
+
+    // ── Team intro strip ──
+    const teamIntro = document.querySelector('.team-intro');
+    if (teamIntro) {
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) teamIntro.classList.add('visible');
+      }, { threshold: 0.2 }).observe(teamIntro);
+    }
+
+    // ── Hero parallax ──
+    const heroBg = document.querySelector('.page-hero-bg');
+    if (heroBg) {
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        heroBg.style.transform = `translateY(${y * 0.35}px) scale(1.1)`;
+      }, { passive: true });
+    }
   </script>
 
 </body>
