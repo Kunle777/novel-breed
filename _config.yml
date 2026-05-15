@@ -1,0 +1,16 @@
+include:
+  - images
+  - "*.css"
+  - "*.js"
+
+exclude:
+  - README.md
+  - CODE_DOCUMENTATION.md
+  - DEPLOYMENT_CHECKLIST.md
+  - FINAL_AUDIT_REPORT.md
+  - MOBILE_RESPONSIVE_README.md
+  - PROJECT_STATUS.md
+  - SEO_OPTIMIZATION_SUMMARY.md
+  - TROUBLESHOOTING_SUMMARY.md
+  - netlify.toml
+  - .htaccess
