@@ -314,7 +314,7 @@ section { padding: 90px 0; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../images/hero.jpg');
+  background-image: url('images/hero.jpg');
   background-size: cover;
   background-position: center;
   transform: scale(1.05);
